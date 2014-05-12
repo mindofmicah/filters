@@ -3,3 +3,5 @@ suites:
     main:
         src_path: 'src'
 #        spec_path: 'spec'
+extensions:
+    - PhpSpec\Extension\CodeCoverageExtension
