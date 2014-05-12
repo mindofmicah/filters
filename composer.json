@@ -1,0 +1,17 @@
+{
+	"name": "mindofmicah/filters",
+	"description": "Filter project.",
+	"keywords": [],
+	"require": {
+        "phpspec/phpspec" : "2.0.*@dev"
+	},
+	"autoload": {
+        "psr-0": {
+            "" : "src"
+        }
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "dev"
+}
