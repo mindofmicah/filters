@@ -21,6 +21,9 @@ class Formatter
 
         $ret = '';
         foreach (explode("\n", $this->rules) as $index => $rule) {
+            if ($rule == '') {
+                continue;
+            }
             try {
                 if (preg_match('%^(or|and) (.+)$%', $rule, $match)) {
                     $rule = $match[2];

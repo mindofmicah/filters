@@ -83,4 +83,11 @@ class FormatterSpec extends ObjectBehavior
         $this->setRules("title contains \"the\"\nor apples=\"oranges\"")->formatAsWhereClause()->shouldBe('title LIKE "%the%" OR apples="oranges"');
     }
 
+    public function it_should_ignore_empty_lines_when_processing_rules(Factory $factory)
+    {
+        $factory->createAsSQL('type = "books"')->willReturn('type="books"')->shouldBeCalledTimes(1);
+        $factory->createAsSQL("")->shouldNotBeCalled();
+        $this->beConstructedWith($factory, "type = \"books\"\n");
+        $this->formatAsWhereClause()->shouldBe('type="books"');
+    }
 }
