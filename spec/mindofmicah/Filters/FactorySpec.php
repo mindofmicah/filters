@@ -37,4 +37,9 @@ class FactorySpec extends ObjectBehavior
     {
         $this->createAsSQL('my=rulestring')->shouldEqual('my=rulestring');
     }
+
+    public function it_should_return_an_array_of_valid_operators()
+    {
+        $this->operators()->shouldBeArray();
+    }
 }

@@ -30,4 +30,10 @@ class Factory
         $rule = $this->create($argument1);
         return $rule->formatAsSQL();
     }
+
+    public function operators()
+    {
+        return array();
+        // TODO: write logic here
+    }
 }
