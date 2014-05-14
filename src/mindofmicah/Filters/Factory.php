@@ -19,6 +19,9 @@ class Factory
         if (strpos($argument1, 'begins with')) {
             return new BeginsWithFormatter($argument1);
         }
+        if (strpos($argument1, 'in')) {
+            return new InFormatter($argument1);
+        }
         throw new \Exception($argument1 . ' is not a valid rule');
     }
 

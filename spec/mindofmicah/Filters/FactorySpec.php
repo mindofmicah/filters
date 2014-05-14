@@ -29,6 +29,10 @@ class FactorySpec extends ObjectBehavior
     {
         $this->create('title begins with "the"')->shouldHaveType('mindofmicah\Filters\BeginsWithFormatter');
     }
+    public function it_should_return_an_in_formatter_when_necessary()
+    {
+        $this->create('title in "apples", "oranges"')->shouldHaveType('mindofmicah\Filters\InFormatter');
+    }
     public function it_should_return_an_sql_string_for_create_as_sql()
     {
         $this->createAsSQL('my=rulestring')->shouldEqual('my=rulestring');
